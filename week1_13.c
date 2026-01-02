@@ -29,7 +29,7 @@ int main()
               if(top==-1)
                {
                 printf("Not Balenced");
-                -return 0;
+                return 0;
                }
                pop();
           }
@@ -43,4 +43,5 @@ int main()
     printf("Not Balenced");
    }
  return 0;   
+
 }
