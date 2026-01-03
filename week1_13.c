@@ -1,15 +1,15 @@
 #include<stdio.h>
 int stack[100];
 int top=-1;
-char push(char x)
+void push(char x)
 {
 stack[++top]=x;
 
 }
 
-void pop()
+char pop()
 {
-    stack[top--];
+  return stack[top--];
 
 }
 int main()
@@ -28,20 +28,30 @@ int main()
           {
               if(top==-1)
                {
-                printf("Not Balenced");
+                printf(" Expression is Not Balenced");
                 return 0;
                }
-               pop();
+              char ch=pop();
+              if((ch=='(' && exp[i]!=')')||
+                 (ch=='{' && exp[i]!='}')||
+                 (ch=='[' && exp[i]!=']'))
+              {
+                  printf("Expression is NOT Balenced");
+                  return 0;
           }
+
+          }   
    }
+ 
    if(top==-1)
    {
-    printf("Balenced");
+    printf(" Expression is Balenced");
    }
    else
    {
-    printf("Not Balenced");
+    printf(" Expression is Not Balenced");
    }
  return 0;   
 
 }
+
